@@ -1,0 +1,255 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #FFCC00; /* RUOK branded yellow for headers */
+}
+
+h3 {
+    font-weight: 400;
+    color: #FFCC00; /* RUOK branded yellow for sub-headers */
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Header */
+header {
+    background-color: #FFCC00; /* RUOK branded yellow */
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #000; /* Black text for the main heading */
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+header .btn {
+    background: #333;
+    color: #FFCC00; /* Button text with RUOK branded yellow */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+header .btn:hover {
+    background: #555;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFCC00; /* Yellow highlight on hover */
+}
+
+/* Sections */
+section {
+    margin: 50px 0;
+    border-left: 5px solid #FFCC00; /* Add a yellow accent on the left side of sections */
+    padding-left: 15px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-left: 5px solid #FFCC00; /* Add a yellow accent on the left side of steps */
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 5px solid #FFCC00; /* Yellow accent at the top of the footer */
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #FFCC00;
+    color: #333;
+}
+
+table tr:hover {
+    background-color: #FFCC00;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s;
+}
+
+/* Story Layout */
+.stories {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.story {
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    align-items: flex-start;
+    gap: 20px; /* Add some space between image and text */
+}
+
+.story img {
+    width: 40%; /* Adjust width of the image */
+    max-width: 300px; /* Prevents the image from getting too large */
+    height: auto;
+    border-radius: 10px;
+}
+
+.story div {
+    width: 60%; /* Allocate remaining space for the text */
+}
+
+/* Bold Headings for Story Titles */
+.story h3 {
+    font-weight: bold; /* Ensure the heading is bold */
+    font-size: 1.5rem; /* Optional: increase the font size for emphasis */
+}
+
+@media (max-width: 768px) {
+    .story {
+        flex-direction: column; /* Stack image and text on small screens */
+    }
+
+    .story img {
+        width: 100%; /* Make image take up full width on small screens */
+    }
+
+    .story div {
+        width: 100%; /* Make text take up full width on small screens */
+    }
+}
